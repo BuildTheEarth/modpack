@@ -1,0 +1,6 @@
+.vscode/
+.idea/
+
+# Pakku
+build/
+pakku.jar

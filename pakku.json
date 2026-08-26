@@ -1,0 +1,10 @@
+{
+    "name": "BuildTheEarth Official Modpack",
+    "version": "0.1.6-SNAPSHOT",
+    "overrides": [
+        "config",
+        "journeymap",
+        "openminemap",
+        "options.txt"
+    ]
+}
