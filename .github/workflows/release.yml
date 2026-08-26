@@ -1,0 +1,332 @@
+# Publish the modpack to CurseForge, Modrinth, and (optionally) GitHub Releases.
+#
+# Triggers
+#   - Push a version tag: v0.2.0 (release) or v0.2.0-beta.1 / v0.2.0-alpha.1
+#   - Manual run from Actions → Release (useful for dry runs)
+#
+# Before a release
+#   1. Set pakku.json "version" yourself (must match the tag without the leading v)
+#   2. Fill in CHANGELOG.md for that version
+#   3. git tag v0.2.0 && git push origin v0.2.0
+#
+# Repository variables
+#   CURSEFORGE_ID   CurseForge project id
+#   MODRINTH_ID     Modrinth project id (or slug)
+#
+# Repository secrets
+#   CURSEFORGE_TOKEN     CurseForge upload token
+#   MODRINTH_TOKEN       Modrinth PAT with project write access
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      github_release:
+        description: Also create a GitHub Release
+        type: boolean
+        default: true
+      version_type:
+        description: Release type (auto = from pakku.json / tag)
+        type: choice
+        options:
+          - auto
+          - release
+          - beta
+          - alpha
+        default: alpha # Remove this line once we have a stable release
+      dry_run:
+        description: Build only; skip CurseForge, Modrinth, and GitHub publish
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PAKKU_VERSION: "1.5.0"
+  JAVA_VERSION: "21"
+
+jobs:
+  release:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+          cache-jdk: true
+
+      - name: Download Pakku
+        run: |
+          set -euo pipefail
+          curl -fsSL -o pakku.jar \
+            "https://github.com/juraj-hrivnak/Pakku/releases/download/v${PAKKU_VERSION}/pakku.jar"
+          test -s pakku.jar
+
+      - name: Collect metadata
+        id: meta
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REF_TYPE: ${{ github.ref_type }}
+          REF_NAME: ${{ github.ref_name }}
+          INPUT_VERSION_TYPE: ${{ github.event.inputs.version_type || 'auto' }}
+          INPUT_GITHUB_RELEASE: ${{ github.event.inputs.github_release || 'true' }}
+          INPUT_DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: |
+          set -euo pipefail
+          test -f pakku.json
+          test -f pakku-lock.json
+          test -f CHANGELOG.md
+
+          NAME=$(jq -r '.name' pakku.json)
+          VERSION=$(jq -r '.version' pakku.json)
+          MC_VERSION=$(jq -r '.mc_versions[0]' pakku-lock.json)
+          LOADER_TYPE=$(jq -r '.loaders | keys[0]' pakku-lock.json)
+          LOADER_VERSION=$(jq -r --arg t "$LOADER_TYPE" '.loaders[$t]' pakku-lock.json)
+
+          if [ -z "$NAME" ] || [ "$NAME" = "null" ]; then
+            echo "::error::pakku.json is missing name"
+            exit 1
+          fi
+          if [ -z "$VERSION" ] || [ "$VERSION" = "null" ]; then
+            echo "::error::pakku.json is missing version"
+            exit 1
+          fi
+
+          if [ "$REF_TYPE" = "tag" ]; then
+            TAG_VERSION="${REF_NAME#v}"
+            if [ "$TAG_VERSION" != "$VERSION" ]; then
+              echo "::error::Tag ${REF_NAME} does not match pakku.json version ${VERSION}. Update the version (or the tag) before releasing."
+              exit 1
+            fi
+            GITHUB_TAG="$REF_NAME"
+          else
+            GITHUB_TAG="v${VERSION}"
+          fi
+
+          TYPE="$INPUT_VERSION_TYPE"
+          if [ "$TYPE" = "auto" ] || [ -z "$TYPE" ]; then
+            case "$VERSION" in
+              *-alpha*|*-Alpha*) TYPE=alpha ;;
+              *-beta*|*-Beta*|*-rc*|*-RC*) TYPE=beta ;;
+              *) TYPE=release ;;
+            esac
+          fi
+
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            GITHUB_RELEASE="${INPUT_GITHUB_RELEASE:-true}"
+            DRY_RUN="${INPUT_DRY_RUN:-false}"
+          else
+            GITHUB_RELEASE=true
+            DRY_RUN=false
+          fi
+
+          SAFE_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-' | tr -s '-' | sed 's/-$//')
+
+          {
+            echo "project_name=$NAME"
+            echo "project_version=$VERSION"
+            echo "project_full_name=${NAME} ${VERSION}"
+            echo "project_file_name=${SAFE_NAME}-${VERSION}"
+            echo "mc_version=$MC_VERSION"
+            echo "loader_type=$LOADER_TYPE"
+            echo "loader_version=$LOADER_VERSION"
+            echo "release_type=$TYPE"
+            echo "github_tag=$GITHUB_TAG"
+            echo "github_release=$GITHUB_RELEASE"
+            echo "dry_run=$DRY_RUN"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "Pack: ${NAME} ${VERSION} (${TYPE})"
+          echo "Minecraft: ${MC_VERSION} / ${LOADER_TYPE} ${LOADER_VERSION}"
+
+      - name: Build changelog
+        env:
+          VERSION: ${{ steps.meta.outputs.project_version }}
+          CURRENT_TAG: ${{ steps.meta.outputs.github_tag }}
+        run: |
+          set -euo pipefail
+
+          extract_section() {
+            local needle="$1"
+            awk -v needle="$needle" '
+              BEGIN { found = 0 }
+              /^## / {
+                if (found) exit
+                heading = $0
+                sub(/^##[[:space:]]+/, "", heading)
+                if (heading ~ /^\[/) {
+                  sub(/^\[/, "", heading)
+                  sub(/\].*$/, "", heading)
+                } else {
+                  sub(/[[:space:]].*$/, "", heading)
+                }
+                if (tolower(heading) == tolower(needle)) found = 1
+                next
+              }
+              found { print }
+            ' CHANGELOG.md | sed -e :a -e '/^\n*$/{$d;N;ba' -e '}'
+          }
+
+          NOTES=$(extract_section "$VERSION")
+          if [ -z "$NOTES" ]; then
+            BASE_VERSION="${VERSION%%-*}"
+            if [ "$BASE_VERSION" != "$VERSION" ]; then
+              NOTES=$(extract_section "$BASE_VERSION")
+            fi
+          fi
+          if [ -z "$NOTES" ]; then
+            NOTES=$(extract_section "Unreleased")
+          fi
+
+          git fetch --tags --force origin >/dev/null 2>&1 || true
+          PREV_TAG=$(git tag --list 'v*' --sort=-v:refname | grep -Fxv "$CURRENT_TAG" | head -n1 || true)
+
+          DIFF=""
+          if [ -n "$PREV_TAG" ] && git cat-file -e "${PREV_TAG}:pakku-lock.json" 2>/dev/null; then
+            git show "${PREV_TAG}:pakku-lock.json" > pakku-lock-prev.json
+            java -jar pakku.jar diff -v --markdown PROJECTS_DIFF.md pakku-lock-prev.json pakku-lock.json
+            if [ -s PROJECTS_DIFF.md ]; then
+              DIFF=$(cat PROJECTS_DIFF.md)
+              echo "Mod diff against ${PREV_TAG}:"
+              cat PROJECTS_DIFF.md
+            fi
+          else
+            echo "No previous tag with pakku-lock.json; skipping pakku diff."
+          fi
+
+          {
+            if [ -n "$NOTES" ]; then
+              printf '%s\n' "$NOTES"
+            fi
+            if [ -n "$DIFF" ]; then
+              if [ -n "$NOTES" ]; then
+                printf '\n'
+              fi
+              printf '%s\n' "$DIFF"
+            fi
+            if [ -z "$NOTES" ] && [ -z "$DIFF" ]; then
+              echo "No changelog available."
+            fi
+          } > RELEASE_CHANGELOG.md
+
+          echo "===== Release changelog ====="
+          cat RELEASE_CHANGELOG.md
+
+      - name: Export modpack
+        run: java -jar pakku.jar export --no-server
+
+      - name: Rename artifacts
+        run: |
+          set -euo pipefail
+          FILE_NAME="${{ steps.meta.outputs.project_file_name }}"
+
+          #mkdir -p dist
+          #if compgen -G "build/curseforge/*.zip" > /dev/null; then
+          #  mv build/curseforge/*.zip "dist/${FILE_NAME}-curseforge.zip"
+          #else
+          #  echo "::error::CurseForge zip was not produced by pakku export"
+          #  exit 1
+          #fi
+
+          if compgen -G "build/modrinth/*.mrpack" > /dev/null; then
+            mv build/modrinth/*.mrpack "dist/${FILE_NAME}-modrinth.mrpack"
+          else
+            echo "::error::Modrinth mrpack was not produced by pakku export"
+            exit 1
+          fi
+
+          ls -l dist/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ steps.meta.outputs.project_file_name }}
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Job summary
+        run: |
+          {
+            echo "## ${{ steps.meta.outputs.project_full_name }}"
+            echo
+            echo "- **Type:** \`${{ steps.meta.outputs.release_type }}\`"
+            echo "- **Minecraft:** \`${{ steps.meta.outputs.mc_version }}\`"
+            echo "- **Loader:** \`${{ steps.meta.outputs.loader_type }} ${{ steps.meta.outputs.loader_version }}\`"
+            echo "- **GitHub tag:** \`${{ steps.meta.outputs.github_tag }}\`"
+            echo "- **GitHub release:** \`${{ steps.meta.outputs.github_release }}\`"
+            echo "- **Dry run:** \`${{ steps.meta.outputs.dry_run }}\`"
+            echo
+            cat RELEASE_CHANGELOG.md
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Validate publish config
+        if: steps.meta.outputs.dry_run != 'true'
+        env:
+          CURSEFORGE_ID: ${{ vars.CURSEFORGE_ID }}
+          MODRINTH_ID: ${{ vars.MODRINTH_ID }}
+          CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+        run: |
+          set -euo pipefail
+          missing=0
+          #if [ -z "${CURSEFORGE_ID}" ]; then
+          #  echo "::error::Repository variable CURSEFORGE_ID is not set."
+          #  missing=1
+          #fi
+          if [ -z "${MODRINTH_ID}" ]; then
+            echo "::error::Repository variable MODRINTH_ID is not set."
+            missing=1
+          fi
+          #if [ -z "${CURSEFORGE_TOKEN}" ]; then
+          #  echo "::error::Secret CURSEFORGE_TOKEN is not set."
+          #  missing=1
+          #fi
+          if [ -z "${MODRINTH_TOKEN}" ]; then
+            echo "::error::Secret MODRINTH_TOKEN is not set."
+            missing=1
+          fi
+          if [ "$missing" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Publish to CurseForge, Modrinth, and GitHub
+        if: steps.meta.outputs.dry_run != 'true'
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          #curseforge-id: ${{ vars.CURSEFORGE_ID }}
+          #curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          #curseforge-files: dist/*-curseforge.zip
+
+          modrinth-id: ${{ vars.MODRINTH_ID }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          modrinth-files: dist/*-modrinth.mrpack
+
+          github-token: ${{ steps.meta.outputs.github_release == 'true' && secrets.GITHUB_TOKEN || '' }}
+          github-tag: ${{ steps.meta.outputs.github_tag }}
+          github-commitish: ${{ github.sha }}
+
+          name: ${{ steps.meta.outputs.project_full_name }}
+          version: ${{ steps.meta.outputs.project_version }}
+          version-type: ${{ steps.meta.outputs.release_type }}
+          changelog-file: RELEASE_CHANGELOG.md
+          loaders: ${{ steps.meta.outputs.loader_type }}
+          game-versions: ${{ steps.meta.outputs.mc_version }}
+          game-version-filter: none
+          environment: client
