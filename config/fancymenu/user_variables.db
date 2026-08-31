@@ -1,44 +1,62 @@
 type = user_variables
 
 variable {
-  name = intro_index
-  value = 0
+  name = is_first_time
+  value = false
   reset_on_launch = false
 }
 
 variable {
-  name = is_first_time
+  name = is_first_page
+  value = false
+  reset_on_launch = false
+}
+
+variable {
+  name = is_replay_mode
+  value = flashback
+  reset_on_launch = false
+}
+
+variable {
+  name = is_flashback_recording
+  value = false
+  reset_on_launch = false
+}
+
+variable {
+  name = is_last_page
+  value = false
+  reset_on_launch = false
+}
+
+variable {
+  name = is_main_server
+  value = false
+  reset_on_launch = false
+}
+
+variable {
+  name = intro_pages
+  value = 1
+  reset_on_launch = false
+}
+
+variable {
+  name = replay_mode
+  value = false
+  reset_on_launch = false
+}
+
+variable {
+  name = is_server_loading
   value = true
   reset_on_launch = false
 }
 
 variable {
-  name = calculator_ans
-  value = 
-  reset_on_launch = false
-}
-
-variable {
-  name = background_index
-  value = 4
-  reset_on_launch = false
-}
-
-variable {
-  name = asean
-  value = ["asean.thatsnek.asia"]
-  reset_on_launch = false
-}
-
-variable {
   name = current_server
-  value = 8cb65869-e5e0-45da-b214-eb561eae35dc
-  reset_on_launch = false
-}
-
-variable {
-  name = buildteams
-  value = 
+  value = bte-asean
   reset_on_launch = false
 }
 

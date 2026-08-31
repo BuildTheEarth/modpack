@@ -1,32 +1,11 @@
 type = custom_gui_screens
 
 overridden_screens {
+  com.replaymod.lib.de.johni0702.minecraft.gui.container.AbstractGuiScreen$MinecraftGuiScreen = replay_mod
 }
 
 custom_gui {
-  identifier = build-teams-europe
-  title = Select region
-  allow_esc = true
-  transparent_world_background = true
-  transparent_world_background_overlay = true
-  pause_game = true
-  popup_mode = false
-  popup_mode_background_overlay = true
-}
-
-custom_gui {
-  identifier = build-teams-africa
-  title = Select region
-  allow_esc = true
-  transparent_world_background = true
-  transparent_world_background_overlay = true
-  pause_game = true
-  popup_mode = false
-  popup_mode_background_overlay = true
-}
-
-custom_gui {
-  identifier = pause-calculator
+  identifier = bte_eu
   title = 
   allow_esc = true
   transparent_world_background = true
@@ -37,8 +16,19 @@ custom_gui {
 }
 
 custom_gui {
-  identifier = build-teams-north-america
-  title = Select region
+  identifier = bte_special
+  title = 
+  allow_esc = true
+  transparent_world_background = false
+  transparent_world_background_overlay = true
+  pause_game = false
+  popup_mode = false
+  popup_mode_background_overlay = true
+}
+
+custom_gui {
+  identifier = bte_na
+  title = 
   allow_esc = true
   transparent_world_background = true
   transparent_world_background_overlay = true
@@ -48,8 +38,19 @@ custom_gui {
 }
 
 custom_gui {
-  identifier = build-teams-asia
-  title = Select region
+  identifier = bte_ausie
+  title = 
+  allow_esc = true
+  transparent_world_background = false
+  transparent_world_background_overlay = true
+  pause_game = false
+  popup_mode = false
+  popup_mode_background_overlay = true
+}
+
+custom_gui {
+  identifier = bte_sa
+  title = 
   allow_esc = true
   transparent_world_background = true
   transparent_world_background_overlay = true
@@ -59,8 +60,19 @@ custom_gui {
 }
 
 custom_gui {
-  identifier = build-teams-australia
-  title = Select region
+  identifier = bte_layout
+  title = 
+  allow_esc = true
+  transparent_world_background = false
+  transparent_world_background_overlay = true
+  pause_game = false
+  popup_mode = false
+  popup_mode_background_overlay = true
+}
+
+custom_gui {
+  identifier = bte_africa
+  title = 
   allow_esc = true
   transparent_world_background = true
   transparent_world_background_overlay = true
@@ -70,23 +82,12 @@ custom_gui {
 }
 
 custom_gui {
-  identifier = build-teams-south-america
-  title = Select region
+  identifier = bte_asia
+  title = 
   allow_esc = true
-  transparent_world_background = true
+  transparent_world_background = false
   transparent_world_background_overlay = true
-  pause_game = true
-  popup_mode = false
-  popup_mode_background_overlay = true
-}
-
-custom_gui {
-  identifier = build-teams-start
-  title = Select continent
-  allow_esc = true
-  transparent_world_background = true
-  transparent_world_background_overlay = true
-  pause_game = true
+  pause_game = false
   popup_mode = false
   popup_mode_background_overlay = true
 }
