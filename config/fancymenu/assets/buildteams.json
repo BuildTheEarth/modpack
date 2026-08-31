@@ -1,260 +1,338 @@
 {
-  "43c98aab-e2d1-4a78-8c91-1a3218839e0d": {
-    "name": "BTE New York City",
-    "ip": "nyc.buildtheearth.net",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/nMJMMBR"
-  },
-  "191c58d7-92ca-4c59-8227-e712f62d8b17": {
-    "name": "BTE USA",
-    "ip": "nabte.net",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/TrKHFDWzhT"
-  },
-  "374b0e08-9ef5-4d1c-9a5c-3dc204d9fd96": {
-    "name": "Build The Earth Germany",
-    "ip": "bte-germany.de",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/btegermany"
-  },
-  "b93d267b-625a-449e-88d4-8e64fcb8634e": {
-    "name": "TeamCIS | СНГ",
-    "ip": "buildtheearth.ru",
-    "version": "1.21.4",
-    "invite": "https://discord.gg/hwkhefs"
-  },
-  "711a87b4-53cb-4abd-8097-a63b18c56ffe": {
-    "name": "Build New Jersey",
-    "ip": "hub.andromedacraft.com",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/TQmUQZt"
-  },
-  "3c0a3c13-e0aa-416b-adcb-c632b4f29012": {
-    "name": "Nordic + Baltic",
-    "ip": "nordicbalticbte.net",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/bte-nordic-baltic-692331531456479332"
-  },
-  "3ab140f7-d7f7-451b-87cd-ce988e5f82fa": {
-    "name": "Alps BTE (AT/CH/LI)",
-    "ip": "mc.alps-bte.com",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/vgkspay"
-  },
-  "8cb65869-e5e0-45da-b214-eb561eae35dc": {
-    "name": "Build Benelux",
-    "ip": "bnlx.buildtheearth.net",
-    "version": "1.21.11",
-    "invite": "https://discord.gg/YCSCjrAkHc"
-  },
-  "5f8167a6-db2c-487b-adc1-661699dcdf69": {
-    "name": "BTE Canada",
-    "ip": "btecanada.net",
-    "version": "1.21.10",
-    "invite": "https://discord.com/servers/buildtheearth-net-690908396404080650"
-  },
-  "1a012c0f-55b9-43f6-bfb0-f25ca2ae2d14": {
-    "name": "Build Iberia",
-    "ip": "ib.buildtheearth.net",
-    "version": "1.21.11",
-    "invite": "https://discord.gg/a8PF9sTfqF"
-  },
-  "4a625095-2bdd-44fb-afea-7c893b5b75ce": {
-    "name": "Build The Earth Italia (1:1)",
-    "ip": "mc.bteitalia.it",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/dMahHCH"
-  },
-  "12c12ef5-ef0b-4e36-ab8f-e54521b0f060": {
-    "name": "Build the UK",
-    "ip": "btuk.org",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/2k2hM3f"
-  },
-  "b50fd1ac-3956-413e-bf12-90fb9fcf4f81": {
-    "name": "BTE Theme Parks",
-    "ip": "parks.buildtheearth.net",
-    "version": "1.21.11",
-    "invite": "https://discord.gg/544kmNQ"
-  },
-  "42364012-3ce6-4a22-9598-1ff9774cf59c": {
-    "name": "BTE Team Czechoslovakia",
-    "ip": "czsk.buildtheearth.net",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/vv8Qaew5wQ"
-  },
-  "99f4eac0-825e-409c-9057-766234815295": {
-    "name": "BTE Poland",
-    "ip": "bte.mhsv.pl",
-    "version": "1.21.11",
-    "invite": "https://discord.gg/a6cbfnZxTv"
-  },
-  "c69ad90e-5d43-4393-8fa6-b99bc6c1e2b6": {
-    "name": "BTE France",
-    "ip": "btefrance.fr",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/S8RuuqP"
-  },
-  "74459dfd-3fc8-4b6e-97eb-60f5aa6e12cc": {
-    "name": "Oceania Build Team",
-    "ip": "hub.bteoce.com",
-    "version": "1.21.11",
-    "invite": "https://discord.gg/enk8kJ3"
-  },
-  "5e1c33ae-8c25-459e-9d88-c42a73ebcf18": {
-    "name": "Build The Earth Turkey",
-    "ip": "bteturkey.net",
-    "version": "1.21.11",
-    "invite": "https://discord.gg/GJm2B9h"
-  },
-  "98013a41-915d-4181-9d3b-12a75f933c50": {
-    "name": "BTE ASEAN",
-    "ip": "asean.buildtheearth.net",
-    "version": "1.21.11",
-    "invite": "https://discord.gg/DNwnKmkQpw"
-  },
-  "d9bafd64-31e9-4952-bc8a-2023060d7011": {
-    "name": "BTE Brasil",
-    "ip": "buildtheearth.net.br",
-    "version": "1.21.8",
-    "invite": "https://discord.gg/PXMv8wEB4M"
-  },
-  "43a2b9fc-86e8-46d4-b353-bd1239d06120": {
-    "name": "Build The Earth- Republic of Ireland",
-    "ip": "mc.bteireland.ie",
-    "version": "1.21.4",
-    "invite": "https://discord.gg/bnMCXrERfN"
-  },
-  "9f7c16c9-b9b8-4b05-9314-0b315faa32f2": {
-    "name": "BTE Hong Kong-Macau",
-    "ip": "play.btehkmu.com",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/rUuKaNu"
-  },
-  "080adc4f-4b34-4108-bf97-9e36a2c50d61": {
-    "name": "-",
-    "ip": "-",
-    "version": "-",
-    "invite": "https://discord.gg/"
-  },
-  "9e40ca7c-c7c4-44a2-a295-db58203a683d": {
-    "name": "BuildTheEarth Chile",
-    "ip": "bteconosur.com",
-    "version": "1.12.2",
-    "invite": "https://discord.gg/Q5Q9nw5ux2"
-  },
-  "1324b5d7-a9d9-4e27-ad46-a9f3de205751": {
-    "name": "Africa Rebuilt",
-    "ip": "afr.buildtheearth.net",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/qcjqenDfjC"
-  },
-  "04786b5c-edd6-447a-bf76-96a6f6a11be7": {
-    "name": "BTE Middle East",
-    "ip": "me.buildtheearth.net",
-    "version": "1.21.11",
-    "invite": "https://discord.gg/rkrpeuc"
-  },
-  "dc54af1d-978c-4716-bd69-4ede555e30bc": {
-    "name": "BTE Japan",
-    "ip": "bte-japan.xtremcraft.fr:12013",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/pExkqKVMJn"
-  },
-  "9d362859-7625-4a8d-ac34-186936a26b4f": {
-    "name": "BTE Mexico & Central America",
-    "ip": "btemexca.net",
-    "version": "1.21.11",
-    "invite": "https://discord.gg/mseJqbc"
-  },
-  "7d32dcac-f776-448d-ac2c-dd41e457c770": {
-    "name": "BTE Argentina",
-    "ip": "bteconosur.com",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/csbK2SBHY5"
-  },
-  "9b14b705-dc47-4e16-8cb0-bdb61b4ef811": {
-    "name": "Build Team Hungary",
-    "ip": "hun.buildtheearth.net",
-    "version": "1.21.7",
-    "invite": "https://discord.gg/fUxBGMN"
-  },
-  "706b14b4-8fe4-4467-b7ff-65563a3c0d7e": {
-    "name": "BTE Balkans",
-    "ip": "mc.btebalkans.com",
-    "version": "1.21.8",
-    "invite": "https://discord.gg/fBAfcyg"
-  },
-  "fbda5d25-6ff0-485f-958f-a0d17c890783": {
-    "name": "BTE North Latin America",
-    "ip": "btenla.net",
-    "version": "1.12.2",
-    "invite": "https://discord.gg/HP4GHRCwvv"
-  },
-  "e17d8750-7318-4c7b-83b0-388707e21025": {
-    "name": "BTE Ukraine",
-    "ip": "bteukraine.com",
-    "version": "1.21.4",
-    "invite": "https://discord.gg/J6BnZyQjsx"
-  },
-  "fed954c3-5900-4108-95d3-7dceb743be4a": {
-    "name": "BTE Korea",
-    "ip": "buildtheearth.asia",
-    "version": "1.21.4",
-    "invite": "https://discord.gg/HfhDdkhCb8"
-  },
-  "5e6213e8-8e86-4c44-846d-ee712129ab7c": {
-    "name": "BTE Israel",
-    "ip": "buildisrael.es",
-    "version": "1.21.10",
-    "invite": "https://discord.com/invite/pGSxezp"
-  },
-  "59fabf23-137c-4ef2-a2ec-d4a115f4819b": {
-    "name": "BuildTheEarth: Perú",
-    "ip": "bteconosur.com",
-    "version": "1.12.2",
-    "invite": "https://discord.gg/sfmXJB9"
-  },
-  "5a6ff0ad-845e-4708-b954-4872825525cf": {
-    "name": "BuildTheEarth South Asia",
-    "ip": "in.buildtheearth.net",
-    "version": "1.12.2",
-    "invite": "https://discord.gg/baEF7fK"
-  },
-  "811fc515-86db-4920-90ba-2fa7a9015d9c": {
-    "name": "BTE Mainland China",
-    "ip": "btechina.oddblox.net",
-    "version": "1.21.8",
-    "invite": "https://discord.gg/MFfWWYCx4F"
-  },
-  "3c099632-31d1-4eaa-b735-0b27fae2b234": {
-    "name": "BTE Taiwan",
-    "ip": "mctw.in",
-    "version": "1.21.11",
-    "invite": "https://discord.gg/Ueqj8yr"
-  },
-  "0ca39509-4fb9-4c41-a037-2c138b7cfaff": {
-    "name": "Build The Earth Paraguay + Uruguay ",
-    "ip": "bteconosur.com",
-    "version": "1.12.2",
-    "invite": "https://discord.gg/3gZJmu6"
-  },
-  "c32c7f71-91ec-49b0-b111-918928505309": {
-    "name": "BuildTheEarth: Bolivia",
-    "ip": "bteconosur.com",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/ZxPazZ6w65"
-  },
-  "c053dcb0-9269-40a3-83ff-6f4db74be1dd": {
-    "name": "Military Builders",
-    "ip": "buildtheearth.net",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/UtRmY3B"
-  },
-  "558820c6-ce4f-4281-9e02-95779d4edb40": {
-    "name": "Administrative Team",
-    "ip": "buildtheearth.net",
-    "version": "1.21.10",
-    "invite": "https://discord.gg/a5umxwq6gw"
-  }
+    "bte-nyc": {
+        "name": "BTE New York City",
+        "ip":
+            "nyc.buildtheearth.net"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/nMJMMBR"
+    },
+    "bte-usa": {
+        "name": "BTE USA",
+        "ip":
+            "nabte.net"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/TrKHFDWzhT"
+    },
+    "bte-german": {
+        "name": "Build The Earth Germany",
+        "ip":
+            "bte-germany.de"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/btegermany"
+    },
+    "bte-teamcis": {
+        "name": "TeamCIS | СНГ",
+        "ip":
+            "buildtheearth.ru"
+        ,
+        "version": "1.21.4",
+        "invite": "https://discord.gg/hwkhefs"
+    },
+    "bte-jersey": {
+        "name": "Build New Jersey",
+        "ip":
+            "hub.andromedacraft.com"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/TQmUQZt"
+    },
+    "bte-norbal": {
+        "name": "Nordic + Baltic",
+        "ip":
+            "nordicbalticbte.net"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/bte-nordic-baltic-692331531456479332"
+    },
+    "bte-alps": {
+        "name": "Alps BTE (AT/CH/LI)",
+        "ip":
+            "mc.alps-bte.com"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/vgkspay"
+    },
+    "bte-france": {
+        "name": "BTE France",
+        "ip":
+            "btefrance.fr"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/Rnd8zukRFC"
+    },
+    "bte-benelux": {
+        "name": "Build Benelux",
+        "ip":
+            "bnlx.buildtheearth.net"
+        ,
+        "version": "1.21.11",
+        "invite": "https://discord.gg/YCSCjrAkHc"
+    },
+    "bte-poland": {
+        "name": "BTE Poland",
+        "ip":
+            "bte-poland.pl"
+        ,
+        "version": "1.21.11",
+        "invite": "https://discord.gg/a6cbfnZxTv"
+    },
+    "bte-canada": {
+        "name": "BTE Canada",
+        "ip":
+            "btecanada.net"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.com/servers/buildtheearth-net-690908396404080650"
+    },
+    "bte-iberia": {
+        "name": "Build Iberia",
+        "ip":
+            "ib.buildtheearth.net"
+        ,
+        "version": "1.21.11",
+        "invite": "https://discord.gg/a8PF9sTfqF"
+    },
+    "bte-italia": {
+        "name": "Build The Earth Italia (1:1)",
+        "ip":
+            "mc.bteitalia.it"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/dMahHCH"
+    },
+    "bte-uk": {
+        "name": "Build the UK",
+        "ip":
+            "btuk.org"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/2k2hM3f"
+    },
+    "bte-parks": {
+        "name": "BTE Theme Parks",
+        "ip":
+            "parks.buildtheearth.net"
+        ,
+        "version": "1.21.11",
+        "invite": "https://discord.gg/544kmNQ"
+    },
+    "bte-czech": {
+        "name": "BTE Team Czechoslovakia",
+        "ip":
+            "czsk.buildtheearth.net"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/vv8Qaew5wQ"
+    },
+    "bte-turkey": {
+        "name": "Build The Earth Turkey",
+        "ip":
+            "bteturkey.net"
+        ,
+        "version": "1.21.11",
+        "invite": "https://discord.gg/GJm2B9h"
+    },
+    "bte-oceania": {
+        "name": "Oceania Build Team",
+        "ip":
+            "hub.bteoce.com"
+        ,
+        "version": "1.21.11",
+        "invite": "https://discord.gg/enk8kJ3"
+    },
+    "bte-asean": {
+        "name": "BTE ASEAN",
+        "ip": "asean.buildtheearth.net",
+        "version": "1.21.11",
+        "invite": "https://discord.gg/DNwnKmkQpw"
+    },
+    "bte-ireland": {
+        "name": "Build The Earth- Republic of Ireland",
+        "ip": "mc.bteireland.ie",
+        "version": "1.21.11",
+        "invite": "https://discord.gg/KtWkj9k"
+    },
+    "bte-brasil": {
+        "name": "BTE Brasil",
+        "ip": "buildtheearth.net.br",
+        "version": "1.21.8",
+        "invite": "https://discord.gg/PXMv8wEB4M"
+    },
+    "bte-japan": {
+        "name": "BTE Japan",
+        "ip":
+            "bte-japan.xtremcraft.fr:12013"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/pExkqKVMJn"
+    },
+    "bte-hkmu": {
+        "name": "BTE Hong Kong-Macau",
+        "ip":
+            "play.btehkmu.com"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/rUuKaNu"
+    },
+    "bte-balkans": {
+        "name": "BTE Balkans",
+        "ip":
+            "mc.btebalkans.com"
+        ,
+        "version": "1.21.8",
+        "invite": "https://discord.gg/fBAfcyg"
+    },
+    "bte-chile": {
+        "name": "BuildTheEarth Chile",
+        "ip":
+            "bteconosur.com"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/Q5Q9nw5ux2"
+    },
+    "bte-africa": {
+        "name": "Africa Rebuilt",
+        "ip":
+            "afr.buildtheearth.net"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/qcjqenDfjC"
+    },
+    "bte-middleeast": {
+        "name": "BTE Middle East",
+        "ip":
+            "me.buildtheearth.net"
+        ,
+        "version": "1.21.11",
+        "invite": "https://discord.gg/rkrpeuc"
+    },
+    "bte-mexico": {
+        "name": "BTE Mexico & Central America",
+        "ip":
+            "btemexca.net"
+        ,
+        "version": "1.21.11",
+        "invite": "https://discord.gg/mseJqbc"
+    },
+    "bte-argentina": {
+        "name": "BTE Argentina",
+        "ip":
+            "bteconosur.com"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/csbK2SBHY5"
+    },
+    "bte-hungary": {
+        "name": "Build Team Hungary",
+        "ip":
+            "hun.buildtheearth.net"
+        ,
+        "version": "1.21.7",
+        "invite": "https://discord.gg/fUxBGMN"
+    },
+    "bte-northamerica": {
+        "name": "BTE North Latin America",
+        "ip":
+            "btenla.net"
+        ,
+        "version": "1.12.2",
+        "invite": "https://discord.gg/HP4GHRCwvv"
+    },
+    "bte-ukraine": {
+        "name": "BTE Ukraine",
+        "ip":
+            "bteukraine.com"
+        ,
+        "version": "1.21.4",
+        "invite": "https://discord.gg/J6BnZyQjsx"
+    },
+    "bte-korea": {
+        "name": "BTE Korea",
+        "ip":
+            "buildtheearth.asia"
+        ,
+        "version": "1.21.4",
+        "invite": "https://discord.gg/HfhDdkhCb8"
+    },
+    "bte-israel": {
+        "name": "BTE Israel",
+        "ip":
+            "buildisrael.es"
+        ,
+        "version": "26.1.2",
+        "invite": "https://discord.gg/buildisrael-696609608269037568"
+    },
+    "bte-peru": {
+        "name": "BuildTheEarth: Perú",
+        "ip":
+            "bteconosur.com"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/sfmXJB9"
+    },
+    "bte-southasia": {
+        "name": "BuildTheEarth South Asia",
+        "ip":
+            "buildtheearth.net"
+        ,
+        "version": "1.12.2",
+        "invite": "https://discord.gg/baEF7fK"
+    },
+    "bte-china": {
+        "name": "BTE Mainland China",
+        "ip":
+            "btechina.oddblox.net"
+        ,
+        "version": "1.21.8",
+        "invite": "https://discord.gg/MFfWWYCx4F"
+    },
+    "bte-taiwan": {
+        "name": "BTE Taiwan",
+        "ip": "mctw.in",
+        "version": "1.21.11",
+        "invite": "https://discord.gg/Ueqj8yr"
+    },
+    "bte-paraguay": {
+        "name": "Build The Earth Paraguay + Uruguay ",
+        "ip": "bteconosur.com",
+        "version": "1.21.10",
+        "invite": "https://discord.gg/3gZJmu6"
+    },
+    "bte-bolivia": {
+        "name": "BuildTheEarth: Bolivia",
+        "ip":
+            "bteconosur.com"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/ZxPazZ6w65"
+    },
+    "bte-military": {
+        "name": "Military Builders",
+        "ip":
+            "buildtheearth.net"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/UtRmY3B"
+    },
+    "bte-admin": {
+        "name": "BuildTheEarth.net",
+        "ip":
+            "buildtheearth.net"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/a5umxwq6gw"
+    },
+    "bte-event": {
+        "name": "BTE Event",
+        "ip":
+            "event.buildtheearth.net"
+        ,
+        "version": "1.21.10",
+        "invite": "https://discord.gg/a5umxwq6gw"
+    }
 }
+
+

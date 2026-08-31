@@ -1,0 +1,90 @@
+{
+    "placeholder": "serverplayercount",
+    "values": {
+        "ip": "{"placeholder":"json","values":{"source":"/config/fancymenu/assets/buildteams.json",
+        "json_path":"$.bte-asean.ip"}}"
+    }
+}
+{
+    "placeholder": "serverversion",
+    "values": {
+        "ip": "{"placeholder":"json","values":{"source":"/config/fancymenu/assets/buildteams.json",
+        "json_path":"$.bte-asean.ip"}}"
+    }
+}
+{
+    "placeholder": "serverstatus",
+    "values": {
+        "ip": "{"placeholder":"json","values":{"source":"/config/fancymenu/assets/buildteams.json",
+        "json_path":"$.bte-asean.ip"}}"
+    }
+} 
+
+{
+    "placeholder": "json",
+    "values": {
+        "source": "/config/fancymenu/assets/buildteams.json",
+        "json_path": "$.{"placeholder": "getvariable","values": {"name": "current_server"}
+        }.ip"
+    }
+}
+
+{
+    "placeholder": "json",
+    "values": {
+        "source": "/config/fancymenu/assets/buildteams.json",
+        "json_path": "$.bte-.name"
+    }
+}
+
+Players: {
+    "placeholder": "serverplayercount",
+    "values": {
+        "ip": "{"placeholder":"json","values":{"source":"/config/fancymenu/assets/buildteams.json",
+        "json_path":"$.{"placeholder": "getvariable","values": {"name": "current_server"}
+        }.ip"}}"
+    }
+}
+Version: {
+    "placeholder": "serverversion",
+    "values": {
+        "ip": "{"placeholder":"json","values":{"source":"/config/fancymenu/assets/buildteams.json",
+        "json_path":"$.{"placeholder": "getvariable","values": {"name": "current_server"}
+        }.ip"}}"
+    }
+}
+Players: {
+    "placeholder": "serverplayercount",
+    "values": {
+        "ip": "{"placeholder":"json","values":{"source":"/config/fancymenu/assets/buildteams.json",
+        "json_path":"$.{"placeholder": "getvariable","values": {"name": "current_server"}
+        }.ip"}}"
+    }
+}
+{
+    "placeholder": "serverstatus",
+    "values": {
+        "ip": "{"placeholder":"json","values":{"source":"/config/fancymenu/assets/buildteams.json",
+        "json_path":"$.{"placeholder": "getvariable","values": {"name": "current_server"}
+        }.ip"}}"
+    }
+}
+
+{
+    "placeholder": "json",
+    "values": {
+        "source": "/config/fancymenu/assets/buildteams.json",
+        "json_path": "$.bte-asean.ip"
+    }
+}
+
+606282
+606306
+606330
+
+com.moulberry.flashback.screen.SaveReplayScreen:398473
+com.moulberry.flashback.screen.SaveReplayScreen:398511
+com.moulberry.flashback.screen.SaveReplayScreen:398549
+com.moulberry.flashback.screen.SaveReplayScreen:504549
+
+create_world_screen:cancel_button
