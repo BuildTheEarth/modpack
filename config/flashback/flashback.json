@@ -1,0 +1,131 @@
+{
+  "configVersion": 2,
+  "keybinds": {
+    "pause": "p",
+    "copy": "ctrl+c",
+    "paste": "ctrl+v",
+    "undo": "ctrl+z",
+    "redo": "ctrl+y",
+    "mark_in": "i",
+    "mark_out": "o",
+    "clear_in": "ctrl+i",
+    "clear_out": "ctrl+o",
+    "zoom_in": "equal",
+    "zoom_out": "minus",
+    "add_camera": "none",
+    "timeline_zoom_scroll": "scroll",
+    "timeline_move_scroll": "ctrl+scroll",
+    "roll_cw": "none",
+    "roll_ccw": "none"
+  },
+  "recordingControls": {
+    "controlsLocation": "RIGHT",
+    "automaticallyStart": false,
+    "automaticallyFinish": true,
+    "showRecordingToasts": true,
+    "quicksave": false
+  },
+  "recording": {
+    "markDimensionChanges": true,
+    "recordHotbar": false,
+    "localPlayerUpdatesPerSecond": 20,
+    "recordVoiceChat": false,
+    "recordBobbyIntoReplay": false
+  },
+  "exporting": {
+    "defaultExportFilename": "%date%T%time%",
+    "exportRenderDummyFrames": 0
+  },
+  "keyframes": {
+    "defaultInterpolationType": "SMOOTH",
+    "useRealtimeInterpolation": true
+  },
+  "editorMovement": {
+    "flightDirection": "HORIZONTAL",
+    "flightMomentum": 1.0,
+    "flightLockX": false,
+    "flightLockY": false,
+    "flightLockZ": false,
+    "flightLockYaw": false,
+    "flightLockPitch": false
+  },
+  "marker": {
+    "markerOptions1": {
+      "color": "RED",
+      "customRGB": "#FF0000",
+      "savePosition": true,
+      "description": ""
+    },
+    "markerOptions2": {
+      "color": "RED",
+      "customRGB": "#FF0000",
+      "savePosition": true,
+      "description": ""
+    },
+    "markerOptions3": {
+      "color": "RED",
+      "customRGB": "#FF0000",
+      "savePosition": true,
+      "description": ""
+    },
+    "markerOptions4": {
+      "color": "RED",
+      "customRGB": "#FF0000",
+      "savePosition": true,
+      "description": ""
+    }
+  },
+  "overlay": {
+    "rtcOverlay": false
+  },
+  "advanced": {
+    "disableIncreasedFirstPersonUpdates": false,
+    "disableThirdPersonCancel": false,
+    "synchronizeTicking": false,
+    "ignoredCustomPayloads": ""
+  },
+  "internal": {
+    "recentReplays": [
+      "C:\\Users\\realm\\AppData\\Roaming\\PrismLauncher\\instances\\BTE 26.2 [1.2.2]\\minecraft\\flashback\\replays\\2026-07-29T03_50_55.zip",
+      "C:\\Users\\realm\\AppData\\Roaming\\PrismLauncher\\instances\\BTE 26 [1.2.1]\\minecraft\\flashback\\replays\\2026-06-30T09_31_16.zip",
+      "C:\\Users\\HYPE R Series\\AppData\\Roaming\\PrismLauncher\\instances\\BTE ASEAN-26_1.2.0\\minecraft\\flashback\\replays\\2026-06-26T23_17.zip",
+      "C:\\Users\\HYPE R Series\\AppData\\Roaming\\PrismLauncher\\instances\\BTE ASEAN-26_1.2.0\\minecraft\\flashback\\replays\\2026-06-26T12_47_40.zip"
+    ],
+    "openedWindows": [],
+    "nextUnsupportedModLoaderWarning": 0,
+    "filterUnnecessaryPackets": true,
+    "signedRenderFilter": false,
+    "viewedTipsOfTheDay": 7,
+    "showTipOfTheDay": true,
+    "nextTipOfTheDay": 1785389842414,
+    "replaySorting": "CREATED_DATE",
+    "sortDescending": true,
+    "defaultOverrideFov": 70.0,
+    "enableOverrideFovByDefault": false
+  },
+  "internalExport": {
+    "resolution": [
+      1920,
+      1080
+    ],
+    "framerate": [
+      60.0
+    ],
+    "projection": "PERSPECTIVE",
+    "orthographicZoom": [
+      1.0
+    ],
+    "resetRng": false,
+    "ssaa": false,
+    "noGui": false,
+    "selectedVideoEncoder": [
+      0
+    ],
+    "useMaximumBitrate": false,
+    "recordAudio": false,
+    "transparentBackground": false,
+    "audioCodec": "AAC",
+    "stereoAudio": false
+  },
+  "forceDefaultExportSettings": {}
+}
