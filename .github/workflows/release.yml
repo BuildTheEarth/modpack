@@ -238,12 +238,12 @@ jobs:
 
           mkdir -p dist
           
-          #if compgen -G "build/curseforge/*.zip" > /dev/null; then
-          #  mv build/curseforge/*.zip "dist/${FILE_NAME}-curseforge.zip"
-          #else
-          #  echo "::error::CurseForge zip was not produced by pakku export"
-          #  exit 1
-          #fi
+          if compgen -G "build/curseforge/*.zip" > /dev/null; then
+            mv build/curseforge/*.zip "dist/${FILE_NAME}-curseforge.zip"
+          else
+            echo "::error::CurseForge zip was not produced by pakku export"
+            exit 1
+          fi
 
           if compgen -G "build/modrinth/*.mrpack" > /dev/null; then
             mv build/modrinth/*.mrpack "dist/${FILE_NAME}-modrinth.mrpack"
@@ -287,18 +287,18 @@ jobs:
         run: |
           set -euo pipefail
           missing=0
-          #if [ -z "${CURSEFORGE_ID}" ]; then
-          #  echo "::error::Repository variable CURSEFORGE_ID is not set."
-          #  missing=1
-          #fi
+          if [ -z "${CURSEFORGE_ID}" ]; then
+            echo "::error::Repository variable CURSEFORGE_ID is not set."
+            missing=1
+          fi
           if [ -z "${MODRINTH_ID}" ]; then
             echo "::error::Repository variable MODRINTH_ID is not set."
             missing=1
           fi
-          #if [ -z "${CURSEFORGE_TOKEN}" ]; then
-          #  echo "::error::Secret CURSEFORGE_TOKEN is not set."
-          #  missing=1
-          #fi
+          if [ -z "${CURSEFORGE_TOKEN}" ]; then
+            echo "::error::Secret CURSEFORGE_TOKEN is not set."
+            missing=1
+          fi
           if [ -z "${MODRINTH_TOKEN}" ]; then
             echo "::error::Secret MODRINTH_TOKEN is not set."
             missing=1
@@ -311,9 +311,9 @@ jobs:
         if: steps.meta.outputs.dry_run != 'true'
         uses: Kir-Antipov/mc-publish@v3.3
         with:
-          #curseforge-id: ${{ vars.CURSEFORGE_ID }}
-          #curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
-          #curseforge-files: dist/*-curseforge.zip
+          curseforge-id: ${{ vars.CURSEFORGE_ID }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+          curseforge-files: dist/*-curseforge.zip
 
           modrinth-id: ${{ vars.MODRINTH_ID }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
@@ -324,7 +324,7 @@ jobs:
           github-commitish: ${{ github.sha }}
           github-files: |
             dist/*-modrinth.mrpack
-          # dist/*-curseforge.zip
+            dist/*-curseforge.zip
 
           name: ${{ steps.meta.outputs.project_full_name }}
           version: ${{ steps.meta.outputs.project_version }}
