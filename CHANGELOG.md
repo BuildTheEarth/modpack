@@ -8,6 +8,12 @@
 ### Breaking Changes
 
 
+## 0.2.1
+
+### Changed
+
+* Enabled FancyMenu modpack-mode to hide configuration ui's
+
 ## 0.2.0
 
 ### Added

@@ -7,7 +7,7 @@ B:play_vanilla_menu_music = 'true';
 
 ##[customization]
 
-B:modpack_mode = 'false';
+B:modpack_mode = 'true';
 B:show_customization_overlay = 'true';
 B:advanced_customization_mode = 'true';
 
@@ -28,7 +28,7 @@ S:custom_game_intro_skip_text = '';
 B:show_custom_window_icon = 'true';
 S:custom_window_icon_macos = '/config/fancymenu/assets/icons/logomac.icns';
 S:custom_window_icon_32 = '/config/fancymenu/assets/icons/logo32.png';
-S:custom_window_title = 'BuiltTheEarth - v0.2.0';
+S:custom_window_title = 'BuiltTheEarth - v0.2.1';
 S:custom_window_icon_16 = '/config/fancymenu/assets/icons/logo16.png';
 
 
